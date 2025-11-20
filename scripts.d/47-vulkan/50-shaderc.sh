@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_REPO="https://github.com/google/shaderc.git"
-SCRIPT_COMMIT="c8456388a27b048b93e9082b36202c06200c8887"
+SCRIPT_COMMIT="73743588fe9c39f2f1c780a087d94afac691a189"
 
 ffbuild_enabled() {
     [[ $ADDINS_STR == *4.4* ]] && return -1
@@ -10,7 +10,7 @@ ffbuild_enabled() {
 
 ffbuild_dockerdl() {
     default_dl .
-    echo "./utils/git-sync-deps"
+    echo "./utils/git-sync-deps || exit $?"
 }
 
 ffbuild_dockerbuild() {
